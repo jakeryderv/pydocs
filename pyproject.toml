@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pydocs"
+version = "0.1.0"
+description = "Interactive Python package documentation explorer for the terminal"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+    { name = "Jake" }
+]
+keywords = ["documentation", "introspection", "cli", "python"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Documentation",
+]
+dependencies = [
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+pydocs = "pydocs.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pydocs"]
